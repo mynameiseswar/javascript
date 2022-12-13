@@ -11,26 +11,27 @@ window.addEventListener('DOMContentLoaded',function(){
 
 })
 
-function calculateTotalAmount(unites){
+function calculateTotalAmount(){
 
   console.log('Calculating the Total Amount');
 
   // Logic
   var totalBill = 0;
 
-  if(unites<=50){
-    totalBill = unites * 1;
-  }else if(unites > 50 && unites <= 100){
-    totalBill = (50 * 1) + ((unites - 50) * 1.75);
+  if(this.unites<=50){
+    totalBill = this.unites * 1;
+  }else if(this.unites > 50 && this.unites <= 100){
+    totalBill = (50 * 1) + ((this.unites - 50) * 1.75);
     // totalBill = unites * 1.75;
-  }else if(unites > 100 && unites <= 150){
-    totalBill = (50 * 1) + (50 * 1.75) + ((unites - 100) * 2.30);
+  }else if(this.unites > 100 && this.unites <= 150){
+    totalBill = (50 * 1) + (50 * 1.75) + ((this.unites - 100) * 2.30);
   }else {
-    totalBill = (50 * 1) + (50 * 1.75) + (50 * 2.30) + ((unites - 150) * 3);
+    totalBill = (50 * 1) + (50 * 1.75) + (50 * 2.30) + ((this.unites - 150) * 3);
   }
   document.getElementById('total__bill').innerHTML = totalBill;
 }
 
 function onNumberChange(){
 
+    this.unites = document.getElementById('noOfUnites').value;
 }
