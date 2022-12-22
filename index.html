@@ -6,11 +6,25 @@
   <script src="./app.js"></script>
 </head>
 
-
 <body>
-  <input type="number" id="noOfUnites" onchange="onNumberChange()" />
-  <button onclick="calculateTotalAmount()"> Calculate </button>
-  <p> Total Amount is <span id="total__bill"> </span></p>
+
+  <div class="button" onclick="onShowFive()"> Show 5 Buttons</div>
+  <div class="button" onclick="onShowFour()"> Show 4 Buttons</div>
+
+  <div class="button" onclick="onCreateNewButton()"> Create A Button </div>
+  <section id="container">
+
+
+
+
+    <br />
+
+    <div class="button">B1</div>
+    <div class="button">B2</div>
+    <div class="button">B3</div>
+    <div class="button">B4</div>
+    <div class="button" id="button-5">B5</div>
+  </section>
 </body>
 
 </html>

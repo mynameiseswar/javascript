@@ -1,37 +1,51 @@
 
-var unites = 0;
 
 window.addEventListener('DOMContentLoaded',function(){
-  console.log("App JS File is loaded.");
+  console.log('App JS File is Loaded.');
+  // Method Calling.
 
- // 0 - 50 per unit cost is 1.00
- // 51- 100 per unit cost is 1.75
- // 101 - 150 Per Unit cost is 2.30
- // 151 - Above Per unit cost is 3
+  // for(var i=0;i< 5;i++){
+  //   createButton(`Button ${i}`);
+  // }
 
-})
+  // createButton()
 
-function calculateTotalAmount(){
+});
 
-  console.log('Calculating the Total Amount');
-
-  // Logic
-  var totalBill = 0;
-
-  if(this.unites<=50){
-    totalBill = this.unites * 1;
-  }else if(this.unites > 50 && this.unites <= 100){
-    totalBill = (50 * 1) + ((this.unites - 50) * 1.75);
-    // totalBill = unites * 1.75;
-  }else if(this.unites > 100 && this.unites <= 150){
-    totalBill = (50 * 1) + (50 * 1.75) + ((this.unites - 100) * 2.30);
-  }else {
-    totalBill = (50 * 1) + (50 * 1.75) + (50 * 2.30) + ((this.unites - 150) * 3);
-  }
-  document.getElementById('total__bill').innerHTML = totalBill;
+// Method Implementation
+function createButton(buttonTitle = "Click Me"){
+  console.log("Create Button Method Invoked.");
+  let createTag = document.createElement('section');
+  createTag.setAttribute('class','button');
+  createTag.setAttribute('id','my__button');
+  createTag.innerHTML = `<p> ${buttonTitle}</p>`
+  document.getElementById('container').appendChild(createTag);
+  createTag.addEventListener('click',onButtonClick());
+  console.log(createTag);
 }
 
-function onNumberChange(){
 
-    this.unites = document.getElementById('noOfUnites').value;
+function onButtonClick(){
+  alert("Button Click");
+}
+
+function onShowFive(){
+  console.log("Show 5 Buttons");
+  //document.getElementById('button-5').style.display = 'block';
+  document.getElementById('container').innerHTML ='';
+  for(var i=0;i< 5;i++){
+     createButton(`Button ${i}`);
+ }
+}
+
+function onShowFour(){
+ // document.getElementById('button-5').style.display = 'none';
+ document.getElementById('container').innerHTML ='';
+ for(var i=0;i< 4;i++){
+    createButton(`Button ${i}`);
+ }
+}
+
+function onCreateNewButton(){
+  createButton();
 }
